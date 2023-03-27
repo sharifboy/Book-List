@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const year = document.querySelector("#year");
   const button = document.querySelector(".btn");
   const bookList = document.querySelector("#book-list");
+  const form = document.querySelector("#book-form");
 
   button.addEventListener("click", (event) => {
     event.preventDefault();
@@ -16,10 +17,20 @@ window.addEventListener("DOMContentLoaded", () => {
       const newRow = document.createElement("tr");
 
       const newTitle = document.createElement("td");
-      newTitle.innerHTML == title.value;
+      newTitle.innerHTML = title.value;
       newRow.appendChild(newTitle);
 
       const newAuthor = document.createElement("td");
+      newAuthor.innerHTML = author.value;
+      newRow.appendChild(newAuthor);
+
+      const newDate = document.createElement("td");
+      newDate.innerHTML = year.value;
+      newRow.appendChild(newDate);
+
+      bookList.appendChild(newRow);
+
+      form.reset();
     }
   });
 });
